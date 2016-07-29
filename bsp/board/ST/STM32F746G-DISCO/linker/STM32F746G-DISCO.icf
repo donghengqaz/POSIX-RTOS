@@ -1,0 +1,65 @@
+/*###ICF### Section handled by ICF editor, don't touch! ****/
+/*-Editor annotation file-*/
+/* IcfEditorFile="$TOOLKIT_DIR$\config\ide\IcfEditor\cortex_v1_1.xml" */
+/*-Specials-*/
+
+/*-HZ-RTOS Memory Regions-*/
+
+define symbol __ICFEDIT_intvec_start__ = 0x08000000;
+
+/* Flash total 1MB */
+/* access as 8-bit,16-bit,32-bit,64-bit */
+/* only read instruction by cpu core */
+define symbol __ICFEDIT_region_IROM_start__  = 0x08000000;
+define symbol __ICFEDIT_region_IROM_end__  = 0x080FFFFF;
+
+/* ITCM total 16kb */
+/* access as 8-bit,16-bit,32-bit,64-bit */
+/* only read instruction by cpu core */
+define symbol __ICFEDIT_region_ITCM_start__  = 0x00000000;
+define symbol __ICFEDIT_region_ITCM_end__  = 0x00003FFF;
+
+/* DTCM total 64kb */
+/* access as 8-bit,16-bit,32-bit,64-bit */
+/* read instruction and data */
+define symbol __ICFEDIT_region_DTCM_start__  = 0x20000000;
+define symbol __ICFEDIT_region_DTCM_end__    = 0x2000FFFF;
+
+/* SRAM1 total 240kb */
+/* access as 8-bit,16-bit,32-bit */
+define symbol __ICFEDIT_region_SRAM1_start__  = 0x20010000;
+define symbol __ICFEDIT_region_SRAM1_end__    = 0x2004BFFF;
+
+/* SRAM2 total 16kb */
+/* access as 8-bit,16-bit,32-bit */
+define symbol __ICFEDIT_region_SRAM2_start__  = 0x2004C000;
+define symbol __ICFEDIT_region_SRAM2_end__    = 0x2004FFFF;
+
+/*-Sizes-*/
+define symbol __ICFEDIT_size_cstack__ = 0x200;
+define symbol __ICFEDIT_size_heap__   = 0;
+/**** End of ICF editor section. ###ICF###*/
+
+define memory mem with size = 4G;
+
+define region HZ_RTOS_INSTRUCTION_region   = mem:[from __ICFEDIT_region_IROM_start__  to __ICFEDIT_region_IROM_end__];
+define region HZ_RTOS_USER_DATA1_region    = mem:[from __ICFEDIT_region_SRAM1_start__ to __ICFEDIT_region_SRAM1_end__];
+define region HZ_RTOS_USER_DATA2_region    = mem:[from __ICFEDIT_region_SRAM2_start__ to __ICFEDIT_region_SRAM2_end__];
+define region HZ_RTOS_HARDWARE_DATA_region = mem:[from __ICFEDIT_region_DTCM_start__  to __ICFEDIT_region_DTCM_end__];
+
+define block CSTACK    with alignment = 8, size = __ICFEDIT_size_cstack__   { };
+define block HEAP      with alignment = 8, size = __ICFEDIT_size_heap__     { };
+
+initialize by copy { readwrite };
+do not initialize  { section .noinit };
+
+place at address mem:__ICFEDIT_intvec_start__ { readonly section .intvec };
+
+/* code, .text, 1MB */
+place in HZ_RTOS_INSTRUCTION_region   { readonly, readonly section shell_tab };
+/* data, user, .heap .cstack .readwrite, 240kb */
+place in HZ_RTOS_USER_DATA1_region    { readwrite, block CSTACK, last block HEAP };
+/* data, kernel, .kernel_rw 16kb */
+place in HZ_RTOS_USER_DATA2_region    { readwrite section kernel_rw };
+/* data, , 64kb */
+place in HZ_RTOS_HARDWARE_DATA_region { readwrite section hw_region };
