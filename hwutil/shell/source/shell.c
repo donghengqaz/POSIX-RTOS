@@ -12,7 +12,6 @@
    
 #if USING_SHELL
 
-#include "shell_def.h" 
 #include "errno.h"
 #include "debug.h"
 #include "stdlib.h"

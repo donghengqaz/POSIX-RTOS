@@ -77,7 +77,7 @@
         </option>
         <option>
           <name>OGLastSavedByProductVersion</name>
-          <state>7.50.1.10270</state>
+          <state>7.70.1.11471</state>
         </option>
         <option>
           <name>GeneralEnableMisra</name>
@@ -127,7 +127,7 @@
         </option>
         <option>
           <name>GBECoreSlave</name>
-          <version>22</version>
+          <version>24</version>
           <state>41</state>
         </option>
         <option>
@@ -144,7 +144,7 @@
         </option>
         <option>
           <name>CoreVariant</name>
-          <version>22</version>
+          <version>24</version>
           <state>41</state>
         </option>
         <option>
@@ -167,7 +167,7 @@
         </option>
         <option>
           <name>GFPUCoreSlave2</name>
-          <version>22</version>
+          <version>24</version>
           <state>41</state>
         </option>
       </data>
@@ -316,21 +316,17 @@
         <option>
           <name>CCIncludePath2</name>
           <state>$PROJ_DIR$\..\..\..\hwutil\kernel\include</state>
-          <state>$PROJ_DIR$\..\..\..\hwutil\kernel\definition</state>
-          <state>$PROJ_DIR$\..\..\..\hwutil\drivers\fb\include</state>
-          <state>$PROJ_DIR$\..\..\..\hwutil\drivers\input\include</state>
-          <state>$PROJ_DIR$\..\..\..\hwutil\drivers\led\include</state>
-          <state>$PROJ_DIR$\..\..\..\hwutil\net\lwip\src\include</state>
-          <state>$PROJ_DIR$\..\..\..\hwutil\net\lwip\src\include\ipv4</state>
-          <state>$PROJ_DIR$\..\..\..\hwutil\net\lwip\src\include\port</state>
+          <state>$PROJ_DIR$\..\..\..\hwutil\drivers\include</state>
+          <state>$PROJ_DIR$\..\..\..\hwutil\net\lwip\include</state>
+          <state>$PROJ_DIR$\..\..\..\hwutil\net\lwip\include\ipv4</state>
+          <state>$PROJ_DIR$\..\..\..\hwutil\net\lwip\include\port</state>
           <state>$PROJ_DIR$\..\..\..\hwutil\net\port\include</state>
-          <state>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\Common\include</state>
-          <state>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\CMSIS\include</state>
-          <state>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\cpuport\include</state>
-          <state>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include</state>
-          <state>$PROJ_DIR$\..\..\..\bsp\board\ST\STM32F746G-DISCO\hal\include</state>
-          <state>$PROJ_DIR$\..\main\include</state>
-          <state>$PROJ_DIR$\..\..\..\hwutil\fs\fatfs\include</state>
+          <state>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M7\CMSIS\include</state>
+          <state>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M7\cpuport\include</state>
+          <state>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include</state>
+          <state>F:\virtualbox\shares\gitlab\POSIX-RTOS\bsp\board\ST\STM32F746G-DISCO\hal\include</state>
+          <state>$PROJ_DIR$\..\main</state>
+          <state>$PROJ_DIR$\..\..\..\hwutil\fs\include</state>
           <state>$PROJ_DIR$\..\..\..\hwutil\shell\include</state>
         </option>
         <option>
@@ -661,7 +657,7 @@
       <name>ILINK</name>
       <archiveVersion>0</archiveVersion>
       <data>
-        <version>16</version>
+        <version>17</version>
         <wantNonLocal>1</wantNonLocal>
         <debug>1</debug>
         <option>
@@ -945,6 +941,10 @@
           <name>IlinkThreadsSlave</name>
           <state>1</state>
         </option>
+        <option>
+          <name>IlinkLogCallGraph</name>
+          <state>0</state>
+        </option>
       </data>
     </settings>
     <settings>
@@ -1099,7 +1099,7 @@
         </option>
         <option>
           <name>GBECoreSlave</name>
-          <version>22</version>
+          <version>24</version>
           <state>1</state>
         </option>
         <option>
@@ -1116,7 +1116,7 @@
         </option>
         <option>
           <name>CoreVariant</name>
-          <version>22</version>
+          <version>24</version>
           <state>0</state>
         </option>
         <option>
@@ -1139,7 +1139,7 @@
         </option>
         <option>
           <name>GFPUCoreSlave2</name>
-          <version>22</version>
+          <version>24</version>
           <state>0</state>
         </option>
       </data>
@@ -1616,7 +1616,7 @@
       <name>ILINK</name>
       <archiveVersion>0</archiveVersion>
       <data>
-        <version>16</version>
+        <version>17</version>
         <wantNonLocal>1</wantNonLocal>
         <debug>0</debug>
         <option>
@@ -1900,6 +1900,10 @@
           <name>IlinkThreadsSlave</name>
           <state>1</state>
         </option>
+        <option>
+          <name>IlinkLogCallGraph</name>
+          <state>0</state>
+        </option>
       </data>
     </settings>
     <settings>
@@ -1933,465 +1937,204 @@
     <name>BSP</name>
     <group>
       <name>chip</name>
-      <group>
-        <name>include</name>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\stm32f745xx.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\stm32f746xx.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\stm32f756xx.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\stm32f7xx.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\stm32f7xx_hal.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\stm32f7xx_hal_adc.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\stm32f7xx_hal_adc_ex.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\stm32f7xx_hal_can.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\stm32f7xx_hal_cec.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\stm32f7xx_hal_conf.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\stm32f7xx_hal_conf_template.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\stm32f7xx_hal_cortex.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\stm32f7xx_hal_crc.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\stm32f7xx_hal_crc_ex.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\stm32f7xx_hal_cryp.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\stm32f7xx_hal_cryp_ex.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\stm32f7xx_hal_dac.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\stm32f7xx_hal_dac_ex.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\stm32f7xx_hal_dcmi.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\stm32f7xx_hal_dcmi_ex.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\stm32f7xx_hal_def.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\stm32f7xx_hal_dma.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\stm32f7xx_hal_dma2d.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\stm32f7xx_hal_dma_ex.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\stm32f7xx_hal_eth.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\stm32f7xx_hal_flash.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\stm32f7xx_hal_flash_ex.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\stm32f7xx_hal_gpio.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\stm32f7xx_hal_gpio_ex.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\stm32f7xx_hal_hash.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\stm32f7xx_hal_hash_ex.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\stm32f7xx_hal_hcd.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\stm32f7xx_hal_i2c.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\stm32f7xx_hal_i2c_ex.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\stm32f7xx_hal_i2s.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\stm32f7xx_hal_irda.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\stm32f7xx_hal_irda_ex.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\stm32f7xx_hal_iwdg.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\stm32f7xx_hal_lptim.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\stm32f7xx_hal_ltdc.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\stm32f7xx_hal_nand.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\stm32f7xx_hal_nor.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\stm32f7xx_hal_pcd.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\stm32f7xx_hal_pcd_ex.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\stm32f7xx_hal_pwr.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\stm32f7xx_hal_pwr_ex.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\stm32f7xx_hal_qspi.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\stm32f7xx_hal_rcc.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\stm32f7xx_hal_rcc_ex.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\stm32f7xx_hal_rng.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\stm32f7xx_hal_rtc.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\stm32f7xx_hal_rtc_ex.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\stm32f7xx_hal_sai.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\stm32f7xx_hal_sai_ex.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\stm32f7xx_hal_sd.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\stm32f7xx_hal_sdram.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\stm32f7xx_hal_smartcard.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\stm32f7xx_hal_smartcard_ex.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\stm32f7xx_hal_spdifrx.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\stm32f7xx_hal_spi.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\stm32f7xx_hal_sram.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\stm32f7xx_hal_tim.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\stm32f7xx_hal_tim_ex.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\stm32f7xx_hal_uart.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\stm32f7xx_hal_uart_ex.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\stm32f7xx_hal_usart.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\stm32f7xx_hal_usart_ex.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\stm32f7xx_hal_wwdg.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\stm32f7xx_ll_fmc.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\stm32f7xx_ll_sdmmc.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\stm32f7xx_ll_usb.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\include\system_stm32f7xx.h</name>
-        </file>
-      </group>
-      <group>
-        <name>source</name>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\Startup\iar\startup_stm32f746xx.s</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_adc.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_adc_ex.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_can.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_cec.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_cortex.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_crc.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_crc_ex.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_cryp.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_cryp_ex.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_dac.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_dac_ex.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_dcmi.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_dcmi_ex.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_dma.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_dma2d.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_dma_ex.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_eth.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_flash.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_flash_ex.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_gpio.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_hash.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_hash_ex.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_hcd.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_i2c.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_i2c_ex.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_i2s.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_irda.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_iwdg.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_lptim.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_ltdc.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_msp_template.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_nand.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_nor.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_pcd.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_pcd_ex.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_pwr.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_pwr_ex.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_qspi.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_rcc.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_rcc_ex.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_rng.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_rtc.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_rtc_ex.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_sai.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_sai_ex.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_sd.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_sdram.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_smartcard.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_smartcard_ex.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_spdifrx.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_spi.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_sram.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_tim.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_tim_ex.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_uart.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_usart.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_wwdg.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_ll_fmc.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_ll_sdmmc.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_ll_usb.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\system_stm32f7xx.c</name>
-        </file>
-      </group>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_adc.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_adc_ex.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_can.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_cec.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_cortex.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_crc.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_crc_ex.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_cryp.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_cryp_ex.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_dac.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_dac_ex.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_dcmi.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_dcmi_ex.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_dma.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_dma2d.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_dma_ex.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_eth.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_flash.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_flash_ex.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_gpio.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_hash.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_hash_ex.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_hcd.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_i2c.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_i2c_ex.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_i2s.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_irda.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_iwdg.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_lptim.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_ltdc.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_msp_template.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_nand.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_nor.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_pcd.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_pcd_ex.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_pwr.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_pwr_ex.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_qspi.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_rcc.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_rcc_ex.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_rng.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_rtc.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_rtc_ex.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_sai.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_sai_ex.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_sd.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_sdram.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_smartcard.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_smartcard_ex.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_spdifrx.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_spi.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_sram.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_tim.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_tim_ex.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_uart.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_usart.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_hal_wwdg.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_ll_fmc.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_ll_sdmmc.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\stm32f7xx_ll_usb.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M7\chip\ST\STM32F7\STM32F7xx_HAL_Driver\source\system_stm32f7xx.c</name>
+      </file>
     </group>
     <group>
-      <name>CPU</name>
-      <group>
-        <name>CMSIS</name>
-        <group>
-          <name>include</name>
-          <file>
-            <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\CMSIS\include\core_cm7.h</name>
-          </file>
-          <file>
-            <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\CMSIS\include\core_cmFunc.h</name>
-          </file>
-          <file>
-            <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\CMSIS\include\core_cmInstr.h</name>
-          </file>
-          <file>
-            <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\CMSIS\include\core_cmSimd.h</name>
-          </file>
-        </group>
-        <group>
-          <name>source</name>
-        </group>
-      </group>
-      <group>
-        <name>cpuport</name>
-        <group>
-          <name>include</name>
-          <file>
-            <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\cpuport\include\cpuport.h</name>
-          </file>
-          <file>
-            <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\cpuport\include\spinlock.h</name>
-          </file>
-        </group>
-        <group>
-          <name>source</name>
-          <file>
-            <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\cpuport\source\cpuport.c</name>
-          </file>
-          <file>
-            <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M\M7\cpuport\source\text_switch.s</name>
-          </file>
-        </group>
-      </group>
+      <name>core</name>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M7\cpuport\source\cpuport.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\bsp\arch\ARM\Cortex-M7\cpuport\source\text_switch.s</name>
+      </file>
     </group>
     <group>
-      <name>hal</name>
+      <name>bsp</name>
       <file>
         <name>$PROJ_DIR$\..\..\..\bsp\board\ST\STM32F746G-DISCO\hal\source\cache.c</name>
       </file>
@@ -2428,19 +2171,28 @@
     </group>
   </group>
   <group>
+    <name>main</name>
+    <file>
+      <name>$PROJ_DIR$\..\main\source\app.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\main\source\main.c</name>
+    </file>
+  </group>
+  <group>
     <name>POSIX-RTOS</name>
     <group>
       <name>driver</name>
       <group>
         <name>input</name>
         <file>
-          <name>$PROJ_DIR$\..\..\..\hwutil\drivers\input\source\input.c</name>
+          <name>$PROJ_DIR$\..\..\..\hwutil\drivers\input\input.c</name>
         </file>
       </group>
       <group>
         <name>led</name>
         <file>
-          <name>$PROJ_DIR$\..\..\..\hwutil\drivers\led\source\led_trigger.c</name>
+          <name>$PROJ_DIR$\..\..\..\hwutil\drivers\led\led_trigger.c</name>
         </file>
       </group>
     </group>
@@ -2489,145 +2241,100 @@
     <group>
       <name>net</name>
       <group>
-        <name>LWIP</name>
+        <name>lwip</name>
         <file>
-          <name>$PROJ_DIR$\..\..\..\hwutil\net\lwip\src\core\ipv4\autoip.c</name>
+          <name>$PROJ_DIR$\..\..\..\hwutil\net\lwip\source\core\ipv4\autoip.c</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\..\hwutil\net\lwip\src\core\def.c</name>
+          <name>$PROJ_DIR$\..\..\..\hwutil\net\lwip\source\core\def.c</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\..\hwutil\net\lwip\src\core\dhcp.c</name>
+          <name>$PROJ_DIR$\..\..\..\hwutil\net\lwip\source\core\dhcp.c</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\..\hwutil\net\lwip\src\core\dns.c</name>
+          <name>$PROJ_DIR$\..\..\..\hwutil\net\lwip\source\core\dns.c</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\..\hwutil\net\lwip\src\netif\etharp.c</name>
+          <name>$PROJ_DIR$\..\..\..\hwutil\net\lwip\source\core\ipv4\icmp.c</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\..\hwutil\net\lwip\src\core\ipv4\icmp.c</name>
+          <name>$PROJ_DIR$\..\..\..\hwutil\net\lwip\source\core\ipv4\igmp.c</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\..\hwutil\net\lwip\src\core\ipv4\igmp.c</name>
+          <name>$PROJ_DIR$\..\..\..\hwutil\net\lwip\source\core\ipv4\inet.c</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\..\hwutil\net\lwip\src\core\ipv4\inet.c</name>
+          <name>$PROJ_DIR$\..\..\..\hwutil\net\lwip\source\core\ipv4\inet_chksum.c</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\..\hwutil\net\lwip\src\core\ipv4\inet_chksum.c</name>
+          <name>$PROJ_DIR$\..\..\..\hwutil\net\lwip\source\core\ipv4\ip.c</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\..\hwutil\net\lwip\src\core\ipv4\ip.c</name>
+          <name>$PROJ_DIR$\..\..\..\hwutil\net\lwip\source\core\ipv4\ip_addr.c</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\..\hwutil\net\lwip\src\core\ipv4\ip_addr.c</name>
+          <name>$PROJ_DIR$\..\..\..\hwutil\net\lwip\source\core\ipv4\ip_frag.c</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\..\hwutil\net\lwip\src\core\ipv4\ip_frag.c</name>
+          <name>$PROJ_DIR$\..\..\..\hwutil\net\lwip\source\core\lwip_init.c</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\..\hwutil\net\lwip\src\core\lwip_init.c</name>
+          <name>$PROJ_DIR$\..\..\..\hwutil\net\lwip\source\core\mem.c</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\..\hwutil\net\lwip\src\core\mem.c</name>
+          <name>$PROJ_DIR$\..\..\..\hwutil\net\lwip\source\core\memp.c</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\..\hwutil\net\lwip\src\core\memp.c</name>
+          <name>$PROJ_DIR$\..\..\..\hwutil\net\lwip\source\core\netif.c</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\..\hwutil\net\lwip\src\core\netif.c</name>
+          <name>$PROJ_DIR$\..\..\..\hwutil\net\lwip\source\core\pbuf.c</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\..\hwutil\net\lwip\src\core\pbuf.c</name>
+          <name>$PROJ_DIR$\..\..\..\hwutil\net\lwip\source\core\raw.c</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\..\hwutil\net\lwip\src\core\raw.c</name>
+          <name>$PROJ_DIR$\..\..\..\hwutil\net\lwip\source\core\stats.c</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\..\hwutil\net\lwip\src\core\stats.c</name>
+          <name>$PROJ_DIR$\..\..\..\hwutil\net\lwip\source\core\sys.c</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\..\hwutil\net\lwip\src\core\sys.c</name>
+          <name>$PROJ_DIR$\..\..\..\hwutil\net\lwip\source\core\tcp.c</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\..\hwutil\net\lwip\src\core\tcp.c</name>
+          <name>$PROJ_DIR$\..\..\..\hwutil\net\lwip\source\core\tcp_in.c</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\..\hwutil\net\lwip\src\core\tcp_in.c</name>
+          <name>$PROJ_DIR$\..\..\..\hwutil\net\lwip\source\core\tcp_out.c</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\..\hwutil\net\lwip\src\core\tcp_out.c</name>
+          <name>$PROJ_DIR$\..\..\..\hwutil\net\lwip\source\core\timers.c</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\..\..\hwutil\net\lwip\src\core\timers.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\hwutil\net\lwip\src\core\udp.c</name>
+          <name>$PROJ_DIR$\..\..\..\hwutil\net\lwip\source\core\udp.c</name>
         </file>
       </group>
       <group>
         <name>port</name>
-        <group>
-          <name>include</name>
-          <file>
-            <name>$PROJ_DIR$\..\..\..\hwutil\net\port\include\ippkg.h</name>
-          </file>
-          <file>
-            <name>$PROJ_DIR$\..\..\..\hwutil\net\port\include\ipport.h</name>
-          </file>
-          <file>
-            <name>$PROJ_DIR$\..\..\..\hwutil\net\port\include\ipport_def.h</name>
-          </file>
-          <file>
-            <name>$PROJ_DIR$\..\..\..\hwutil\net\port\include\ipthread.h</name>
-          </file>
-        </group>
-        <group>
-          <name>source</name>
-          <file>
-            <name>$PROJ_DIR$\..\..\..\hwutil\net\port\soure\ippkg.c</name>
-          </file>
-          <file>
-            <name>$PROJ_DIR$\..\..\..\hwutil\net\port\soure\ipport.c</name>
-          </file>
-          <file>
-            <name>$PROJ_DIR$\..\..\..\hwutil\net\port\soure\ipthread.c</name>
-          </file>
-        </group>
+        <file>
+          <name>$PROJ_DIR$\..\..\..\hwutil\net\port\soure\ippkg.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\..\hwutil\net\port\soure\ipport.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\..\hwutil\net\port\soure\ipport_com.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\..\..\..\hwutil\net\port\soure\ipthread.c</name>
+        </file>
       </group>
     </group>
     <group>
       <name>shell</name>
-      <group>
-        <name>include</name>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\hwutil\shell\include\shell.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\hwutil\shell\include\shell_def.h</name>
-        </file>
-      </group>
-      <group>
-        <name>source</name>
-        <file>
-          <name>$PROJ_DIR$\..\..\..\hwutil\shell\source\shell.c</name>
-        </file>
-      </group>
-    </group>
-  </group>
-  <group>
-    <name>main</name>
-    <group>
-      <name>include</name>
-    </group>
-    <group>
-      <name>source</name>
       <file>
-        <name>$PROJ_DIR$\..\main\source\app.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\main\source\main.c</name>
+        <name>$PROJ_DIR$\..\..\..\hwutil\shell\source\shell.c</name>
       </file>
     </group>
   </group>
