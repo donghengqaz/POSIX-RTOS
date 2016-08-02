@@ -12,8 +12,8 @@
 #define STLINK_VCP_COM
 
 /* rtos function definition */
-#define USING_SHELL 1
-#define USING_IPPORT 1
+#define USING_SHELL 0
+#define USING_IPPORT 0
 
 /* disable the C lib */
 #define USING_MALLOC_LIB 0
@@ -27,11 +27,6 @@
 #define HW_ETH_RX_BUFFER_LENGTH_MAX 1560
 
 /* { */
-#define hw_contex_switch_to(to)
-#define hw_contex_switch(from, to)
-#define hw_interrupt_recover(a)
-#define hw_interrupt_suspend()
-#define pthread_hw_stack_init(a, b, c, d) 0
 
 /* } */
 

@@ -156,7 +156,8 @@ bool __pthread_attr_check(const pthread_attr_t *RESTRICT pthread_attr)
  *
  * @param arg the return data of the thread
  */
-void __pthread_exit_entry(void *arg) {
+void __pthread_exit_entry(void *arg)
+{
 	phys_reg_t temp;
 	os_pthread_t *thread;
 

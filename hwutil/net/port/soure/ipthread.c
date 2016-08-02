@@ -39,7 +39,7 @@ static void* ip_rx_thread_entry(void *p)
     
     while( 1 )
     {
-        if(mq_receive(ipport->rx_mqd, (char *)event, sizeof(os_u32), 0))
+        if(mq_receive(ipport->rx_mqd, (char *)&event, sizeof(os_u32), 0))
         {
             if ((recv_pbuf = ipport->hal_rx()) != NULL)
             {        
@@ -52,6 +52,8 @@ static void* ip_rx_thread_entry(void *p)
             }
         }
     }
+
+    return NULL;
 }
 
 /*
@@ -59,9 +61,9 @@ static void* ip_rx_thread_entry(void *p)
  *
  * @param p the time buffer point
  */ 
-static void ipstk_predic_handle(void *p)
+static void ipstk_predic_handle(union sigval sigval)
 {
-    unsigned int *time = (unsigned int *)p;
+    unsigned int *time = (unsigned int *)sigval.sival_ptr;
 
     time[0] = time[0] + 1;
     
@@ -93,7 +95,6 @@ static void ipstk_predic_handle(void *p)
 err_t ipthrtead_init( ipport_t *ipport, const char *name )
 {
     int err;
-    static unsigned int time;
     int tid;
     pthread_attr_t attr;
     sched_param_t app_sched_param =
@@ -101,6 +102,11 @@ err_t ipthrtead_init( ipport_t *ipport, const char *name )
                        IPTHREAD_RX_TICKS,
                        IPTHREAD_RX_PRIORITY);
     
+    struct sigevent sigevent;
+    struct itimerspect itimerspect;
+    timer_t timer;
+    static os_u32 time;
+
     pthread_attr_setschedparam(&attr, &app_sched_param);
     pthread_attr_setstacksize(&attr, IPTHREAD_RX_STACK_SIZE);
     
@@ -109,16 +115,21 @@ err_t ipthrtead_init( ipport_t *ipport, const char *name )
                          ip_rx_thread_entry,
                          ipport);
     ASSERT_KERNEL(!err);
-/*    
-    timer = timer_create( name,
-                          ipstk_predic_handle,
-                          &time,
-                          TCP_TMR_INTERVAL,
-                          TIMER_CYCLE,
-                          &err );
-    ASSERT_KERNEL( err == EOK );
-    timer_start( timer );
-*/  
+
+    err = timer_create( 0, 0, &timer);
+    ASSERT_KERNEL( err == 0 );
+
+    /* create a timer for hear-trigger running in time */
+    sigevent.sigev_notify_function = ipstk_predic_handle;
+    sigevent.sigev_value.sival_ptr = &time;
+    sigevent.sigev_notify = SIGEV_THREAD;
+    timer_create(CLOCK_REALTIME, &sigevent, &timer);
+    ASSERT_KERNEL(timer != 0);
+
+    itimerspect.it_interval.tv_nsec = 10;
+    itimerspect.it_value.tv_nsec = 0;
+    timer_settime(timer, 0, &itimerspect, NULL);
+
     return err;
 }
 
