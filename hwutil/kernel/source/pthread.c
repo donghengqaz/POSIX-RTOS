@@ -34,7 +34,8 @@
  *
  * @return the result
  */
-int pthread_setname_np(pthread_t thread, const char *name) {
+int pthread_setname_np(pthread_t thread, const char *name)
+{
 	os_pthread_t *pthread = (os_pthread_t *) thread;
 
 	memcpy(pthread->name, name, STDOBJ_NAME_MAX - 1);
@@ -53,9 +54,9 @@ int pthread_setname_np(pthread_t thread, const char *name) {
  *
  * @return the result
  */
-int pthread_attr_setstack (pthread_attr_t *RESTRICT attr,
-		void *stack_addr,
-		size_t stack_size)
+int pthread_attr_setstack(pthread_attr_t *RESTRICT attr,
+                          void *stack_addr,
+                          size_t stack_size)
 {
 	if (stack_size < PTHREAD_STACK_SIZE_MIN)
 	return -EINVAL;
@@ -100,7 +101,7 @@ int pthread_attr_setstacksize(pthread_attr_t *RESTRICT attr,
  * @return the result
  */
 int pthread_attr_setschedparam(pthread_attr_t *RESTRICT attr,
-		const struct sched_param *restrict param)
+		const struct sched_param *RESTRICT param)
 {
 
 	if (param->type != PTHREAD_TYPE_USER

@@ -111,7 +111,7 @@ int pthread_attr_setstacksize(pthread_attr_t *RESTRICT attr,
                               size_t stack_size);
 
 int pthread_attr_setschedparam(pthread_attr_t *RESTRICT attr,
-                               const struct sched_param *restrict param);
+                               const struct sched_param *RESTRICT param);
 
 int pthread_setname_np(pthread_t thread, const char *name);
 

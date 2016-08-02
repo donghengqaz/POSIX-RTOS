@@ -12,8 +12,18 @@
     #define WEAK                            __weak
     #define STATIC                          static
     #define INLINE                          STATIC inline
-    #define RTT_API
     #define RESTRICT                        restrict
+#elif defined(__GNUC__)
+    #define NO_INIT
+    #define SECTION(x)                      __attribute__((section(x)))
+    #define UNUSED(x)                       __attribute__((unused))
+    #define USED                            __attribute__((used))
+    #define PRAGMA(x)
+    #define ALIGNMENT(n)                    __attribute__((aligned(n)))
+    #define WEAK                            __attribute__((weak))
+    #define STATIC                          static
+    #define INLINE                          STATIC __inline
+    #define RESTRICT                        __restrict
 #else
     #define NO_INIT
     #define SECTION(x)
@@ -24,7 +34,6 @@
     #define WEAK
     #define STATIC
     #define INLINE
-    #define RTT_API
     #define RESTRICT
 #endif    
 /******************************************************************************/

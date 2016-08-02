@@ -31,11 +31,14 @@
  */
 err_t hal_init(void)
 {
-    for (int order = 0; order < HAL_ORDER_MAX; order++)
+	int order;
+
+    for (order = 0; order < HAL_ORDER_MAX; order++)
     {
+    	int i;
         hal_func_t *hal_func = HAL_FUNC_START_ADDR;
         
-        for (int i = 0; i < HAL_FUNC_NUM; i++)
+        for (i = 0; i < HAL_FUNC_NUM; i++)
         {
             err_t ret;
         

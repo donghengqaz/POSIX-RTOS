@@ -1,7 +1,7 @@
 #ifndef _SSL_MSG_H_
 #define _SSL_MSG_H_
 
-#include "rtos.h"
+#include "types.h"
 
 /*
 http://www.freesoft.org/CIE/Topics/ssl-draft/3-SPEC.HTM
@@ -110,8 +110,8 @@ typedef enum __ssl_msg ssl_msg_t;
 struct __ssl {
 #define SSL_MSG_HEAD_BYTES	4
 
-	u8 msg_type;
-	u8 protocol;
+	os_u8 msg_type;
+	os_u8 protocol;
 };
 typedef struct __ssl ssl_t;
 

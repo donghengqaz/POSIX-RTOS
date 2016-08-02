@@ -9,9 +9,9 @@
 #define SSL_SET_MSG_TYPE(pbuf, type) pbuf[0] = type
 
 #define SSL_SET_MEG_BODY_BYTES(pbuf, bytes) \
-            pbuf[1] = (uint8_t)(bytes >> 16); \
-            pbuf[2] = (uint8_t)(bytes >>  8); \
-            pbuf[3] = (uint8_t)(bytes >>  0);
+            pbuf[1] = (os_u8)(bytes >> 16); \
+            pbuf[2] = (os_u8)(bytes >>  8); \
+            pbuf[3] = (os_u8)(bytes >>  0);
 
 #define SSL_SET_PROTOCOL_VERSION(pbuf, ver)
 /*************************************************/
@@ -35,6 +35,8 @@ INLINE err_t __ssl_set_msg_payload(ssl_t *ssl,
 		default :
 			break;
 	}
+
+	return 0;
 }
 
 /**
