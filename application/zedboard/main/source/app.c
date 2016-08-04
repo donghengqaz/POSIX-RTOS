@@ -14,6 +14,8 @@ static void* app_entry(void *p)
             printf("key [%d] impressed.\r\n", input_event.value + 1);
         }
     }
+
+    return NULL;
 }
 
 
