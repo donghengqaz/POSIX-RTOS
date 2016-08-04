@@ -11,20 +11,17 @@
 .equ I_BIT,			0x80		/* when I bit is '1', disable IRQ */
 .equ F_BIT,			0x40		/* when F bit is '1', disable FIQ */
 
-.equ UND_STACK_SIZE,	0x00000000
-.equ ABT_STACK_SIZE,	0x00000000
-.equ FIQ_STACK_SIZE,	0x00000000
 .equ UND_STACK_SIZE,	0x00000100
-.equ IRQ_STACK_SIZE,	0x00000100
-.equ USR_STACK_SIZE,	0x00000000
+.equ ABT_STACK_SIZE,	0x00000100
+.equ FIQ_STACK_SIZE,	0x00000400
+.equ UND_STACK_SIZE,	0x00000100
+.equ IRQ_STACK_SIZE,	0x00000400
+.equ USR_STACK_SIZE,	0x00000800
 
 #define STACK_SIZE_TOTAL (UND_STACK_SIZE + ABT_STACK_SIZE + FIQ_STACK_SIZE + UND_STACK_SIZE + \
 						  IRQ_STACK_SIZE + USR_STACK_SIZE)
 
 .global stack_top
-
-.section .bss
-stack_top:
 
 .section .test
 /* chip reset entry */
@@ -59,17 +56,6 @@ init_bss_loop:
     strlo r0, [r1], #4
     blo init_bss_loop
 
-    /* initialize .data, move data from data to sdata seaction */
-    ldr r1, =__sdata_start
-    ldr r2, =__sdata_end
-    ldr r3, =__data_start
-
-init_data_loop:
-    cmp r1, r2
-    ldrlo r0, [r3], #4
-    strlo r0, [r1], #4
-    blo init_data_loop
-
     /* jump to main */
     ldr pc, _main
 
@@ -77,7 +63,8 @@ _main:
     .word main
 
 setup_stack:
-    ldr r0, =stack_top
+    /* _stack can be found in the linker file(Xilinx SDK-lsrcipt.ld, and _STACK_SIZE can't be 0) */
+    ldr r0, =_stack
 
     /* setup stack for svc */
     mov sp, r0
@@ -86,25 +73,25 @@ setup_stack:
     msr cpsr_c, #MODE_UND | I_BIT | F_BIT
     mov sp, r0
     /* update the stack point */
-    sub r0, r0, #UND_STACK_SIZE
+    add r0, r0, #UND_STACK_SIZE
 
     /* enter the abort mode and set stack for it */
     msr cpsr_c, #MODE_ABT | I_BIT | F_BIT
     mov sp, r0
     /* update the stack point */
-    sub r0, r0, #ABT_STACK_SIZE
+    add r0, r0, #ABT_STACK_SIZE
 
     /* enter the FIQ mode and set stack for it */
     msr cpsr_c, #MODE_FIQ | I_BIT | F_BIT
     mov sp, r0
     /* update the stack point */
-    sub r0, r0, #FIQ_STACK_SIZE
+    add r0, r0, #FIQ_STACK_SIZE
 
     /* enter the IRQ mode and set stack for it */
     msr cpsr_c, #MODE_IRQ | I_BIT | F_BIT
     mov sp, r0
     /* update the stack point */
-    sub r0, r0, #IRQ_STACK_SIZE
+    add r0, r0, #IRQ_STACK_SIZE
 
     /* switch to SVC32 mode */
     msr cpsr_c, #MODE_SVC | I_BIT | F_BIT
