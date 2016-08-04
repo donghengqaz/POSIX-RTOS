@@ -46,69 +46,69 @@ _reset:
     orr r0, r0, #0x13
     msr cpsr_c, r0
 
-	/* setup stack */
-	bl setup_stack
+    /* setup stack */
+    bl setup_stack
 
-	/* initialize .bss */
-	mov r0, #0x0
-	ldr r1, =__bss_start
-	ldr r2, =__bss_end
+    /* initialize .bss */
+    mov r0, #0x0
+    ldr r1, =__bss_start
+    ldr r2, =__bss_end
 
 init_bss_loop:
-	cmp r1, r2
-	strlo r0, [r1], #4
-	blo init_bss_loop
+    cmp r1, r2
+    strlo r0, [r1], #4
+    blo init_bss_loop
 
-	/* initialize .data, move data from data to sdata seaction */
-	ldr r1, =__sdata_start
-	ldr r2, =__sdata_end
-	ldr r3, =__data_start
+    /* initialize .data, move data from data to sdata seaction */
+    ldr r1, =__sdata_start
+    ldr r2, =__sdata_end
+    ldr r3, =__data_start
 
 init_data_loop:
-	cmp r1, r2
-	ldrlo r0, [r3], #4
-	strlo r0, [r1], #4
-	blo init_data_loop
+    cmp r1, r2
+    ldrlo r0, [r3], #4
+    strlo r0, [r1], #4
+    blo init_data_loop
 
-	/* jump to main */
-	ldr pc, _main
+    /* jump to main */
+    ldr pc, _main
 
 _main:
-	.word main
+    .word main
 
 setup_stack:
-	ldr r0, =stack_top
+    ldr r0, =stack_top
 
-	/* setup stack for svc */
-	mov sp, r0
+    /* setup stack for svc */
+    mov sp, r0
 
-	/* enter the undefined Instruction mode and set stack for it */
-	msr cpsr_c, #MODE_UND | I_BIT | F_BIT
-	mov sp, r0
-	/* update the stack point */
-	sub r0, r0, #UND_STACK_SIZE
+    /* enter the undefined Instruction mode and set stack for it */
+    msr cpsr_c, #MODE_UND | I_BIT | F_BIT
+    mov sp, r0
+    /* update the stack point */
+    sub r0, r0, #UND_STACK_SIZE
 
-	/* enter the abort mode and set stack for it */
-	msr cpsr_c, #MODE_ABT | I_BIT | F_BIT
-	mov sp, r0
-	/* update the stack point */
-	sub r0, r0, #ABT_STACK_SIZE
+    /* enter the abort mode and set stack for it */
+    msr cpsr_c, #MODE_ABT | I_BIT | F_BIT
+    mov sp, r0
+    /* update the stack point */
+    sub r0, r0, #ABT_STACK_SIZE
 
-	/* enter the FIQ mode and set stack for it */
-	msr cpsr_c, #MODE_FIQ | I_BIT | F_BIT
-	mov sp, r0
-	/* update the stack point */
-	sub r0, r0, #FIQ_STACK_SIZE
+    /* enter the FIQ mode and set stack for it */
+    msr cpsr_c, #MODE_FIQ | I_BIT | F_BIT
+    mov sp, r0
+    /* update the stack point */
+    sub r0, r0, #FIQ_STACK_SIZE
 
-	/* enter the IRQ mode and set stack for it */
-	msr cpsr_c, #MODE_IRQ | I_BIT | F_BIT
-	mov sp, r0
-	/* update the stack point */
-	sub r0, r0, #IRQ_STACK_SIZE
+    /* enter the IRQ mode and set stack for it */
+    msr cpsr_c, #MODE_IRQ | I_BIT | F_BIT
+    mov sp, r0
+    /* update the stack point */
+    sub r0, r0, #IRQ_STACK_SIZE
 
-	/* switch to SVC32 mode */
-	msr cpsr_c, #MODE_SVC | I_BIT | F_BIT
+    /* switch to SVC32 mode */
+    msr cpsr_c, #MODE_SVC | I_BIT | F_BIT
 
-	bx lr
+    bx lr
 
 
