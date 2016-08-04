@@ -11,7 +11,7 @@ static void* app_entry(void *p)
     {
         if (input_event_catch(INPUT_KEY_FALLING_EDGE_EVENT, &input_event, 0) > 0)
         {
-            printf("key [%d] impressed.\r\n", input_event.value + 1);
+            printf("key [%d] input.\r\n", input_event.value + 1);
         }
     }
 

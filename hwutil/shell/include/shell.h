@@ -91,20 +91,14 @@ struct shell_cmd
             (shell_func_t)func, \
             priority \
         };
-        
-    struct shell_dev* shell_dev_find(int file);
-    err_t shell_init(void);
-    struct shell_dev* shell_dev_create(const char *name, err_t *err, os_u8 ack);
-    ssize_t shell_printk( struct shell_dev *shell_dev, const char *fmt, ... );
-    err_t shell_dev_set(struct shell_dev *shell_dev, shell_cmd_t cmd, void *arg);
 #else
     #define SHELL_CMD_EXPORT(func, desc, priority)    
-    
-    static struct shell_dev* shell_dev_find(int file) { return NULL; }
-    static err_t shell_init(void) { return 0; }   
-    static struct shell_dev* shell_dev_create(const char *name, err_t *err, os_u8 ack) { return 0; }
-    static ssize_t shell_printk( struct shell_dev *shell_dev, const char *fmt, ... ) { return 0; }
-    static err_t shell_dev_set(struct shell_dev *shell_dev, shell_cmd_t cmd, void *arg) { return 0; }
 #endif
+
+struct shell_dev* shell_dev_find(int file);
+err_t shell_init(void);
+struct shell_dev* shell_dev_create(const char *name, err_t *err, os_u8 ack);
+ssize_t shell_printk( struct shell_dev *shell_dev, const char *fmt, ... );
+err_t shell_dev_set(struct shell_dev *shell_dev, shell_cmd_t cmd, void *arg);
 
 #endif

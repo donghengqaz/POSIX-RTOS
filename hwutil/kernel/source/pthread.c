@@ -224,7 +224,7 @@ os_pthread_t* __pthread_create(const pthread_attr_t *RESTRICT pthread_attr,
 	else
 	memcpy(&thread_attr_init, pthread_attr, sizeof(pthread_attr_t));
 
-	if (!(pthread = calloc(sizeof(os_pthread_t))))
+	if (!(pthread = zalloc(sizeof(os_pthread_t))))
 	return NULL;
 
 	if (!thread_attr_init.stk_addr)

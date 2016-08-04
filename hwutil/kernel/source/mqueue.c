@@ -79,11 +79,11 @@ mqd_t mq_open (const char *name, int flag, ...)
         goto check_failed;
     
     /* get message buffer */
-    if (!(buffer = calloc((sizeof(mq_msg_t) + mq_attr->mq_msgsize) * mq_attr->mq_maxmsg)))
+    if (!(buffer = zalloc((sizeof(mq_msg_t) + mq_attr->mq_msgsize) * mq_attr->mq_maxmsg)))
         goto check_failed;
     
     /* get message queue object buffer */
-    if (!(mq = calloc(sizeof(mq_t))))
+    if (!(mq = zalloc(sizeof(mq_t))))
     	goto alloc_buf_failed;
      
     /* initialize the message queue */

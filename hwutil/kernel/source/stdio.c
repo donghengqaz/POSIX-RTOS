@@ -15,7 +15,7 @@ int getchar(void)
     return 0;
 }
 
-int putchar(char ch)
+int putchar(int ch)
 {
     return 0;  
 }
@@ -484,7 +484,7 @@ static void cfltcvt(double value, char *buffer, char fmt, int precision)
     }
     if (fmt == 'g')
     {
-        char * digits = ecvtbuf(value, precision, &decpt, &sign, cvtbuf);
+        //char * digits = ecvtbuf(value, precision, &decpt, &sign, cvtbuf);
         int magnitude = decpt - 1;
         if (magnitude < -4  ||  magnitude > precision - 1)
         {
@@ -616,7 +616,7 @@ static void cropzeros(char *buffer)
         stop = buffer--;
         while('0' == *buffer) buffer--;
         if('.' == *buffer) buffer--;
-        while(*++buffer = *stop++);
+        while(*++buffer == *stop++);
     }
 }
 
@@ -943,8 +943,8 @@ ssize_t printk(const char *fmt, ...)
 {
     va_list args;
     ssize_t send_bytes;
-    static char printk_buf[256] KERNEL_SECTION;
-    extern int fputc( char ch );
+    char printk_buf[256] KERNEL_SECTION;
+    extern int fputc(int ch, FILE *stream);
     
 #if _ATOM_
     phys_reg_t temp;  
@@ -957,7 +957,7 @@ ssize_t printk(const char *fmt, ...)
     
     for(ssize_t i = 0; i < send_bytes; i++)
     {
-        fputc(printk_buf[i]);
+        fputc(printk_buf[i], NULL);
     }
 #if _ATOM_    
     hw_interrupt_recover(temp);
@@ -977,8 +977,8 @@ ssize_t printf(const char *fmt, ...)
 {
     va_list args;
     ssize_t send_bytes;
-    static char printk_buf[128] KERNEL_SECTION;
-    extern int fputc(char ch);
+    char printk_buf[128];
+    extern int fputc(int ch, FILE *stream);
 #if _ATOM_
     phys_reg_t temp;  
     
@@ -990,7 +990,7 @@ ssize_t printf(const char *fmt, ...)
     
     for(ssize_t i = 0; i < send_bytes; i++)
     {
-        fputc(printk_buf[i]);
+        fputc(printk_buf[i], NULL);
     }
 #if _ATOM_    
     hw_interrupt_recover(temp);

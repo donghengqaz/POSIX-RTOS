@@ -43,7 +43,7 @@ void* memcpy(void *dest, const void *src, size_t count)
   *
   * @return the address of source memory
   */
-void* memset(void *src, char ch, size_t count)
+void* memset(void *src, int ch, size_t count)
 {
     char *_s = (char *)src;
     
@@ -146,7 +146,7 @@ int strnlen( const char *src, size_t count )
   * @return the point where the byte is the same as the specified character or 
   * return null if not find
   */
-char* strchr( const char *str, char ch )
+char* strchr( const char *str, int ch )
 {
     while (*str && *str != ch)
         str++;

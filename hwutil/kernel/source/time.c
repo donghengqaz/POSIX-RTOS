@@ -166,6 +166,8 @@ static void* timer_thread_entry(void *p)
             }
         }
     }
+
+    return NULL;
 }
 
 int timer_init(void)

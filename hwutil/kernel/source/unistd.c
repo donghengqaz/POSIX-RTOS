@@ -60,7 +60,7 @@ int stdobj_create (enum stdobj_type obj, const char *name, struct stdops *stdops
     if (!stdops)
         return -EINVAL;
     
-    if (!(stdobj = calloc(sizeof(struct stdobj))))
+    if (!(stdobj = zalloc(sizeof(struct stdobj))))
         return -EINVAL;
     
     memcpy(&stdobj->name, name , STDOBJ_NAME_MAX - 1);

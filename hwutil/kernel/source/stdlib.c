@@ -20,10 +20,10 @@
 
 #define MALLOC_MIN_SIZE                 12
 
-#define MALLOC_DEBUG                    0
+#define MALLOC_DEBUG_USING              0
 
 /* malloc debug function definition */
-#if 0
+#if MALLOC_DEBUG_USING
     #define MALLOC_DEBUG( x ) printk x
 #else
     #define MALLOC_DEBUG( x )
@@ -196,13 +196,13 @@ void *malloc(size_t size)
 }
 
 /*
- * calloc - the function will alloc a block of memory and clear it 
+ * zalloc - the function will alloc a block of memory and clear it
  *
  * @param size the memory size
  *
  * @return point of the memory base address
  */
-void *calloc(size_t size)
+void *zalloc(size_t size)
 {
     char *p = malloc(size);
       
@@ -212,6 +212,18 @@ void *calloc(size_t size)
     return p;
 }
 
+/*
+ * calloc - the function will alloc specified blocks
+ *
+ * @param size the memory size
+ * @param num  the memory blocks number
+ *
+ * @return point of the memory base address
+ */
+void *calloc(size_t num, size_t size)
+{
+    return malloc(size * num);
+}
 
 /*
  * free - the function will free the allocated memory

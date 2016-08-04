@@ -3,6 +3,8 @@
 
 #include "rtos.h"
 
+typedef void* FILE;
+
 typedef char* va_list;
 #ifndef __va_rounded_size
     #define __va_rounded_size(TYPE) (((sizeof(TYPE) + sizeof(int) - 1) / sizeof(int)) * sizeof(int))
@@ -14,7 +16,7 @@ typedef char* va_list;
     #define va_arg(AP, TYPE)        (AP += __va_rounded_size(TYPE), *((TYPE *)(AP - __va_rounded_size(TYPE))))
 #endif
 #ifndef va_end
-    #define va_end(AP)              (AP = (va_list)0)
+    #define va_end(AP)              (AP = (va_list)NULL)
 #endif
 
 /*
