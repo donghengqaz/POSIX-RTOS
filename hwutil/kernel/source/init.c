@@ -10,7 +10,6 @@
 
 #include "init.h"
 
-
 #include "sched.h"
 #include "debug.h"
 #include "errno.h"
@@ -44,7 +43,9 @@
 #ifdef __CC_ARM                                                                
 extern int Image$$RW_IRAM1$$ZI$$Limit;                                         
 #elif __ICCARM__                                                               
-#pragma section="HEAP"                                                         
+#pragma section="HEAP"
+#elif __GNUC__
+extern int __undef_stack;
 #else                                                                          
 extern int __bss_end;                                                          
 #endif                                                                         
@@ -53,6 +54,8 @@ extern int __bss_end;
 #define HEAP_MEM_INIT()    heap_mem_init((size_t)&Image$$RW_IRAM1$$ZI$$Limit, HW_RAM_ADDR_ADDR)
 #elif __ICCARM__                                                               
 #define HEAP_MEM_INIT()    heap_mem_init((size_t)__segment_end("HEAP"), HW_RAM_ADDR_ADDR)
+#elif __GNUC__
+#define HEAP_MEM_INIT()    heap_mem_init((size_t)__undef_stack, HW_RAM_ADDR_ADDR)
 #else                                                                          
 #define HEAP_MEM_INIT()    heap_mem_init((size_t)&__bss_end, HW_RAM_ADDR_ADDR)
 #endif

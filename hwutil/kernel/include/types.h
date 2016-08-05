@@ -65,8 +65,14 @@ typedef signed long long                    os_s64;
 /******************************************************************************/
 
 /* define the hardware data type */
-typedef unsigned int                        phys_addr_t;
-typedef unsigned int                        phys_reg_t;
+typedef os_u32                              phys_addr_t;
+typedef os_u32                              phys_reg_t;
+typedef volatile os_u32                     rw_reg_t;
+typedef const os_u32                        ro_reg_t;
+typedef volatile os_u32                     wo_reg_t;
+
+/* define the date type of the time */
+typedef os_u32                              time_t;
 
 /* define the handle of  the thread */
 typedef int                                 pthread_t;
@@ -74,9 +80,6 @@ typedef int                                 pid_t;
 
 /* define the handle of  the timer */
 typedef int                                 timer_t;
-
-/* define the date type of the time */
-typedef unsigned int                        time_t;
 
 /* define the handle of the message queue */
 typedef int                                 mqd_t ;
@@ -116,7 +119,7 @@ typedef int                                 mode_t;
 #ifndef __O
 #define __O                                 volatile
 #endif
-    
+
 #define OS_RW                               __IO
 #define OS_RO                               __I
 #define OS_WO                               __O
