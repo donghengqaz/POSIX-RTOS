@@ -23,7 +23,7 @@
 
 .global stack_top
 
-.section .test
+.section .text
 /* chip reset entry */
 .globl _reset
 _reset:
@@ -62,6 +62,7 @@ init_bss_loop:
 _main:
     .word main
 
+/* setup the stack of user mode and exceptio nmode */
 setup_stack:
     /* _stack can be found in the linker file(Xilinx SDK-lsrcipt.ld, and _STACK_SIZE can't be 0) */
     ldr r0, =_stack

@@ -110,6 +110,16 @@ static void rtos_kernel_init(void)
 /*
  * the function will initialize the HAL
  */
+static void rtos_chip_init(void)
+{
+    extern err_t chip_init(void);
+
+    ASSERT_KERNEL(!chip_init());
+}
+
+/*
+ * the function will initialize the HAL
+ */
 static void rtos_hal_init(void)
 {
     extern err_t hal_init(void);
@@ -154,6 +164,8 @@ void rtos_run(void)
     
     rtos_kernel_init();
     
+    rtos_chip_init();
+
     rtos_hal_init();
     
     rtos_idle_init();

@@ -1,6 +1,5 @@
 
 .section .vectors
-.code 32
 
 .global _vector_table
 _vector_table:
@@ -41,8 +40,24 @@ _vector_fiq:
 
 .balignl 16, 0xDEADBEEF
 
+.section .text.irq
+
+    .align  5
 _reset_handle:
     b _reset
+
+_fiq_handle:
+    /* FIQ mode has private r8-r12 register */
+    stmfd sp!, {r0-r7, lr}
+    bl    chip_irq_handle
+    ldmfd sp!, {r0-r7, lr}
+    subs  pc, lr, #0x04
+
+_irq_handle:
+    stmfd sp!, {r0-r12, lr}
+    bl    chip_irq_handle
+    ldmfd sp!, {r0-r12, lr}
+    subs  pc, lr, #0x04
 
 _undef_handle:
     subs pc, lr, #0x04
@@ -56,11 +71,17 @@ _pabt_handle:
 _dabt_handle:
     subs pc, lr, #0x04
 
-_irq_handle:
-    subs pc, lr, #0x04
-
 _resv_handle:
     subs pc, lr, #0x04
 
-_fiq_handle:
-    subs pc, lr, #0x04
+.section .text
+
+.global set_vector
+ set_vector:
+    mrc p15, #0, r1, c1, c0, #0
+    bic r1,  #(0x01 << 13)
+    mcr p15, #0, r1, c1, c0, #0
+
+    mcr p15, #0, r0, c12, c0, #0
+
+    bx  lr

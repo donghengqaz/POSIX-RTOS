@@ -5,6 +5,8 @@
 
 #define APU_FREQ (833 * 1000 * 1000) // MHz
 
+#define CHIP_MAX_IRQ_NUM 94
+
 /* systick irq cycle time (millisecond) */
 #define RTOS_SYS_TICK_PERIOD 1UL
 
