@@ -5,4 +5,4 @@ RTOS with POSIX interface. Followings are supporting architectures and boards:
             I. STM32F746G-DISCO
 					  
         2. Cortex-M3:
-            I. ShenZhouIV-devbaord
+            I. ShenZhouIV-devboard
